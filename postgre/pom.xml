@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.blibli.oss.example</groupId>
+  <artifactId>data-migration-example-postgre</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>data-migration-example-postgre</name>
+  <description>Data Migration Example Potgre</description>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.9.RELEASE</version>
+    <relativePath/>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <cassandra-driver.version>3.1.2</cassandra-driver.version>
+    <data-migration.version>0.0.1</data-migration.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-core</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-generator</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-migrate</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-rollback</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-app</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency>
+
+    <!-- FOR MONGODB DATABASE MIGRATION-->
+    <!-- <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-mongo</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency> -->
+
+    <!-- FOR POSTGRESQL DATABASE MIGRATION -->
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-postgre</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency>
+
+    <!-- FOR ELASTICSEARCH DATABASE MIGRATION -->
+    <!-- <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-elasticsearch</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency> -->
+
+    <!-- FOR CASSANDRA DATABASE MIGRATION -->
+    <!-- <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>data-migration-cassandra</artifactId>
+      <version>${data-migration.version}</version>
+    </dependency> -->
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray-bliblidotcom-maven</id>
+      <name>bintray</name>
+      <url>https://dl.bintray.com/bliblidotcom/maven</url>
+    </repository>
+    <repository>
+      <id>spring-snapshots</id>
+      <name>Spring Snapshots</name>
+      <url>https://repo.spring.io/snapshot</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+</project>
